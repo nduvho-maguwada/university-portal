@@ -13,7 +13,6 @@ public class StudentDAO {
 
     public StudentDAO() {
         try {
-            // Load PostgreSQL JDBC driver
             Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException e) {
             throw new RuntimeException("PostgreSQL JDBC Driver not found", e);
@@ -24,7 +23,6 @@ public class StudentDAO {
         return DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
     }
 
-    // Get courses for a specific student
     public List<Course> getCoursesByStudentId(int studentId) throws SQLException {
         List<Course> courses = new ArrayList<>();
         String sql = "SELECT c.course_id, c.course_code, c.course_name, c.instructor, c.schedule " +

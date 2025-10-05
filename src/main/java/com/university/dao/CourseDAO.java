@@ -13,7 +13,6 @@ public class CourseDAO {
 
     public CourseDAO() {
         try {
-            // Explicitly load PostgreSQL driver
             Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException e) {
             throw new RuntimeException("PostgreSQL Driver not found", e);
@@ -24,7 +23,6 @@ public class CourseDAO {
         return DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
     }
 
-    // Retrieve all courses
     public List<Course> getAllCourses() throws SQLException {
         List<Course> courses = new ArrayList<>();
         String sql = "SELECT * FROM courses";
@@ -45,19 +43,17 @@ public class CourseDAO {
         return courses;
     }
 
-    // Update course details
     public void updateCourse(Course course) throws SQLException {
         String sql = "UPDATE courses SET instructor = ?, schedule = ? WHERE course_id = ?";
         try (Connection conn = getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, course.getInstructor());
-            stmt.setString(2, course.getSchedule());
-            stmt.setInt(3, course.getId());
-            stmt.executeUpdate();
+             stmt.setString(1, course.getInstructor());
+             stmt.setString(2, course.getSchedule());
+             stmt.setInt(3, course.getId());
+             stmt.executeUpdate();
         }
     }
 
-    // Get course by ID
     public Course getCourseById(int courseId) throws SQLException {
         String sql = "SELECT * FROM courses WHERE course_id = ?";
         Course course = null;

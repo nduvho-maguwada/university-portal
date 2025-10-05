@@ -6,7 +6,6 @@ public class Student {
     private String lastName;
     private String email;
 
-    // Getter and Setter for id
     public int getId() {
         return id;
     }
@@ -14,7 +13,6 @@ public class Student {
         this.id = id;
     }
 
-    // Getter and Setter for firstName
     public String getFirstName() {
         return firstName;
     }
@@ -22,7 +20,6 @@ public class Student {
         this.firstName = firstName;
     }
 
-    // Getter and Setter for lastName
     public String getLastName() {
         return lastName;
     }
@@ -30,7 +27,6 @@ public class Student {
         this.lastName = lastName;
     }
 
-    // Getter and Setter for email
     public String getEmail() {
         return email;
     }

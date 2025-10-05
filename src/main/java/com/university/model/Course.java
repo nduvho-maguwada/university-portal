@@ -7,7 +7,6 @@ public class Course {
     private String instructor;
     private String schedule;
 
-    // Getter and Setter for id
     public int getId() {
         return id;
     }
@@ -15,7 +14,6 @@ public class Course {
         this.id = id;
     }
 
-    // Getter and Setter for code
     public String getCode() {
         return code;
     }
@@ -23,7 +21,6 @@ public class Course {
         this.code = code;
     }
 
-    // Getter and Setter for name
     public String getName() {
         return name;
     }
@@ -31,7 +28,6 @@ public class Course {
         this.name = name;
     }
 
-    // Getter and Setter for instructor
     public String getInstructor() {
         return instructor;
     }
@@ -39,7 +35,6 @@ public class Course {
         this.instructor = instructor;
     }
 
-    // Getter and Setter for schedule
     public String getSchedule() {
         return schedule;
     }

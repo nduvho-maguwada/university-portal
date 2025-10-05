@@ -25,7 +25,6 @@ public class FacultyServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            // Show all courses in faculty view
             List<Course> courses = courseDAO.getAllCourses();
             request.setAttribute("courses", courses);
             request.getRequestDispatcher("/WEB-INF/jsp/faculty.jsp").forward(request, response);
